@@ -5,9 +5,8 @@ import { ProductList } from '../features/productList/ProductList'
 const HomePage = () => {
   return (
     <div>
-        <Navbar>
-            <ProductList></ProductList>
-        </Navbar>
+        <Navbar/>
+        <ProductList/>
     </div>
   )
 }

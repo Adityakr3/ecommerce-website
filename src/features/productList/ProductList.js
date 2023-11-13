@@ -4,7 +4,7 @@ import { increment, incrementAsync, selectCount } from "./ProductListSlice";
 import { Fragment} from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import { ShoppingCartIcon, ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -12,13 +12,6 @@ const sortOptions = [
   { name: 'Newest', href: '#', current: false },
   { name: 'Price: Low to High', href: '#', current: false },
   { name: 'Price: High to Low', href: '#', current: false },
-]
-const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
-  { name: 'Laptop Sleeves', href: '#' },
 ]
 const filters = [
   {
@@ -183,16 +176,6 @@ export function ProductList() {
                 {/* Filters */}
                 <form className="mt-4 border-t border-gray-200">
                   <h3 className="sr-only">Categories</h3>
-                  <ul role="list" className="px-2 py-3 font-medium text-gray-900">
-                    {subCategories.map((category) => (
-                      <li key={category.name}>
-                        <a href={category.href} className="block px-2 py-3">
-                          {category.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-
                   {filters.map((section) => (
                     <Disclosure as="div" key={section.id} className="border-t border-gray-200 px-4 py-6">
                       {({ open }) => (
@@ -314,14 +297,6 @@ export function ProductList() {
             {/* Filters */}
             <form className="hidden lg:block">
               <h3 className="sr-only">Categories</h3>
-              <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                {subCategories.map((category) => (
-                  <li key={category.name}>
-                    <a href={category.href}>{category.name}</a>
-                  </li>
-                ))}
-              </ul>
-
               {filters.map((section) => (
                 <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
                   {({ open }) => (
@@ -371,7 +346,7 @@ export function ProductList() {
                   <div className="bg-white">
                   <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                     <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-                      Customers also purchased
+                      Product List
                     </h2>
             
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
