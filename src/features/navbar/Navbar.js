@@ -5,8 +5,6 @@ import { ShoppingCartIcon , Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/re
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
   { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -36,7 +34,7 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src="https://cdn.iconscout.com/icon/free/png-512/free-ecommerce-3713043-3096502.png?f=webp&w=256"
                     alt="Your Company"
                   />
                 </div>
@@ -66,9 +64,11 @@ export default function Navbar() {
                   className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                  <ShoppingCartIcon className="h-6 w-6 " aria-hidden="true" />
+                </button> 
+                <span className="inline-flex items-center rounded-md mt-5 - bg-pink-50 px-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-700/10">
+        3
+      </span>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
