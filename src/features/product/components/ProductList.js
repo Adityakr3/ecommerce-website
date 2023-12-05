@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, incrementAsync, selectCount } from "../ProductListSlice";
+import { fetchAllProductsAsync , selectAllProducts, } from "../ProductSlice";
 import { Fragment } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon , StarIcon } from "@heroicons/react/24/outline";
@@ -162,9 +162,13 @@ function classNames(...classes) {
 }
 
 export function ProductList() {
-  const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const products = useSelector(selectAllProducts)
+
+  useEffect (()=>{
+    fetchAllProductsAsync()
+  },[])
   return (
     <div className="bg-white">
       <div>
